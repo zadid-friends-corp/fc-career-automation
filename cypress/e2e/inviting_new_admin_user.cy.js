@@ -1,7 +1,7 @@
 describe('Admin Invite New User', () => {
   const adminEmail = 'zadid.ahsan@teamfriends.co.jp';
   const adminOtp = '777777';
-  const emailAddress = 'zadid.ahsan.admin_test1@r6gn1hkq.mailosaur.net';
+  const emailAddress = 'zadid.ahsan.admin_test7@r6gn1hkq.mailosaur.net';
   const serverID = 'r6gn1hkq'
 
   it('Logs in and invites a new admin user', () => {
@@ -32,21 +32,24 @@ describe('Admin Invite New User', () => {
       // Open the role dropdown
       cy.get('#org-setup-form_role').click();
 
-      cy.get('//div[contains(text(),"Recruiter")]').click()
+      cy.get('.ant-select-item-option-active > .ant-select-item-option-content').click()
 
       cy.contains('span', 'Send Invitation').should('be.visible').click();
+
+      
+
   });
 
 
   it('Retrieve the link in the email and login as new registered admin',()=>{
     cy.mailosaurGetMessage(serverID,{sentTo: emailAddress})
     .then((email) =>{
-     expect(email.subject).to.equal('Career | FRIENDS CORP. | Registration Confirmation')
+     expect(email.subject).to.equal('Career | FRIENDS CORP. | Accept Invitation and Join Our Career Platform')
      let confirmSignupLink = email.html.links[0].href
      cy.visit(confirmSignupLink)
      cy.get('#login-email-form_email').type(emailAddress)
      cy.contains('span', 'Submit').click();
-     cy.get('#login-otp-form_otp').type(otp)
+     cy.get('#login-otp-form_otp').type(adminOtp)
      cy.contains('span', 'Login').click();
     })
  })

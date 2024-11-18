@@ -1,5 +1,5 @@
 describe('User Registration and Invitation Link Handling', () => {
-  const emailAddress = 'zadid.ahsan.test13@r6gn1hkq.mailosaur.net'; 
+  const emailAddress = 'zadid.ahsan.test15@r6gn1hkq.mailosaur.net'; 
   const otp = '777777'; 
   let invitationLink = null;
   const serverID = 'r6gn1hkq'
