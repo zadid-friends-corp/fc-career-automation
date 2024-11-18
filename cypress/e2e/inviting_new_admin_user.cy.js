@@ -1,7 +1,7 @@
 describe('Admin Invite New User', () => {
   const adminEmail = 'zadid.ahsan@teamfriends.co.jp';
   const adminOtp = '777777';
-  const emailAddress = 'zadid.ahsan.admin_test7@r6gn1hkq.mailosaur.net';
+  const emailAddress = 'zadid.ahsan.admin_test17@r6gn1hkq.mailosaur.net';
   const serverID = 'r6gn1hkq'
 
   it('Logs in and invites a new admin user', () => {
@@ -34,10 +34,9 @@ describe('Admin Invite New User', () => {
 
       cy.get('.ant-select-item-option-active > .ant-select-item-option-content').click()
 
-      cy.contains('span', 'Send Invitation').should('be.visible').click();
-
-      
-
+      cy.contains('span', 'Send Invitation').should('be.visible').click(); 
+      // cy.contains('//span[normalize-space()="Zadid Ahsan Nabi | Admin (Admin)"]').click()
+      //cy.contains('//span[normalize-space()="Logout"]').click()
   });
 
 
@@ -53,5 +52,7 @@ describe('Admin Invite New User', () => {
      cy.contains('span', 'Login').click();
     })
  })
+
+
 
 });
