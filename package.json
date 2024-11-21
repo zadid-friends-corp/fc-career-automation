@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "cypress-file-upload": "^5.0.8",
     "cypress-mailosaur": "^2.16.0",
     "mailosaur": "^8.7.0"
   },
